@@ -1,0 +1,18 @@
+body{
+    background-image: url(../images/gorod.jpeg);
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-attachment: fixed;
+    height: 100%;
+}
+
+#header{
+    max-width: 100%;
+}
+
+.container{
+    width: 52%;
+    margin: auto;
+    background-color: red;
+}
