@@ -1,3 +1,11 @@
+*{
+    box-sizing: border-box;
+}
+
+html{
+    height: 100%;
+}
+
 body{
     background-image: url(../images/gorod.jpeg);
     background-size: cover; 
@@ -5,14 +13,30 @@ body{
     background-position: right top;
     background-attachment: fixed;
     height: 100%;
+    overflow: hidden;
+}
+
+.main-section{
+    height: 100%;
 }
 
 #header{
-    max-width: 100%;
+    display: block;
+    margin: auto;
+    max-width: 75%;
 }
 
 .container{
-    width: 52%;
-    margin: auto;
-    background-color: red;
+    width: 50%;
+    height: 100%;
+    margin: 0 auto;
 }
+
+.column{
+    border: 5px solid #ae2c3e;
+    width: 49%;
+    height: 100%;
+    display: inline-block;
+}
+
+
