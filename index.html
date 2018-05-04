@@ -7,21 +7,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
-    <script src="assets/javascript.game.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <script src="assets/javascript/game.js"></script>
 </head>
 <body> 
+
     <section>
         <img id="header" src="assets/images/Hangman_Zombies.png" alt="Zombies">
     </section>
-    <section class="main-section">
-        <div class="container">
-            <div class="column">
-
+    <section>
+            <div class="row justify-content-center">
+                <div class="col-4 left-column">
+                    One of two columns
+                </div>
+                <div class="col-4 right-column">
+                    <h3 class="textStyle">Press any key to get started!</h3>
+                    <h3 class="textStyle">Wins</h3>
+                    <h3 class="textStyle" id="currentWord">Current Word</h3>
+                </div>
             </div>
-            <div class="column">
 
-            </div>
-        </div>
-    </section>    
+    </section> 
+    <script>
+        startGame();
+    </script>
+    
 </body>
 </html>

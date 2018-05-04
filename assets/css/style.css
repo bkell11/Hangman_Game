@@ -2,22 +2,13 @@
     box-sizing: border-box;
 }
 
-html{
-    height: 100%;
-}
-
 body{
     background-image: url(../images/gorod.jpeg);
     background-size: cover; 
     background-repeat: no-repeat;
     background-position: right top;
     background-attachment: fixed;
-    height: 100%;
     overflow: hidden;
-}
-
-.main-section{
-    height: 100%;
 }
 
 #header{
@@ -26,17 +17,12 @@ body{
     max-width: 75%;
 }
 
-.container{
-    width: 50%;
-    height: 100%;
-    margin: 0 auto;
-}
-
-.column{
+.left-column, .right-column{
     border: 5px solid #ae2c3e;
-    width: 49%;
-    height: 100%;
-    display: inline-block;
+    text-align: center;
+    color: firebrick;
 }
 
-
+.textStyle{
+    margin-bottom: 30px;
+}
