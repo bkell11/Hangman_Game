@@ -9,6 +9,11 @@ function startGame(){
     var randomWord = gameWords[Math.floor(Math.random() * gameWords.length)];
     wordLetters = randomWord.split("");
 
+    guessesLeft = 12;
+    lettersGuessed = [];
+    currentWord = [];
+    
+
     for (i=0; i<wordLetters.length; i++){
         currentWord.push("_");
     }
