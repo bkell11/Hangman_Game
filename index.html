@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,12 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
     <script src="assets/javascript/game.js"></script>
 </head>
-<body> 
+
+<body>
     <audio id="audioplayer" controls autoplay preload>
-            <source src="assets/audio/BO2.mp3" type="audio/mp3">
+        <source src="assets/audio/BO2.mp3" type="audio/mp3">
     </audio>
 
     <section>
@@ -22,6 +25,7 @@
         <div class="row justify-content-center">
             <div class="col-4 left-column">
                 <img id="main-image" src="assets/images/staffs.jpg" alt="Word Image">
+                <h3 class="textStyle" id="winningWord"></h3>
             </div>
             <div class="col-4 right-column">
                 <h3 class="textStyle">Press any key to get started!</h3>
@@ -32,10 +36,11 @@
                 <h3 class="textStyle" id="guessLetter">Letters you have guessed:</h3>
             </div>
         </div>
-    </section> 
+    </section>
     <script>
         startGame();
     </script>
-    
+
 </body>
+
 </html>
