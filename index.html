@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Hangman</title>
+    <title>Zombies Hangman</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
@@ -11,7 +11,7 @@
     <script src="assets/javascript/game.js"></script>
 </head>
 <body> 
-    <audio controls autoplay>
+    <audio id="audioplayer" controls autoplay preload>
             <source src="assets/audio/BO2.mp3" type="audio/mp3">
     </audio>
 
@@ -21,10 +21,11 @@
     <section>
         <div class="row justify-content-center">
             <div class="col-4 left-column">
-                One of two columns
+                <img id="main-image" src="assets/images/staffs.jpg" alt="Word Image">
             </div>
             <div class="col-4 right-column">
-                <h3 class="textStyle">Guess the word before they get you!</h3>
+                <h3 class="textStyle">Press any key to get started!</h3>
+                <h3 class="textStyle">Hurry they are coming for you!</h3>
                 <h3 class="textStyle" id="winTotal">Wins =</h3>
                 <h3 class="textStyle" id="guessAmount">Number of guesses remaining =</h3>
                 <h3 class="textStyle" id="newWord">_ _ _ _ _ _</h3>
