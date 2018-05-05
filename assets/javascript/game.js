@@ -18,7 +18,9 @@ function startGame(){
         currentWord.push("_");
     }
         console.log(randomWord);
+        console.log(wordLetters);
         console.log(currentWord);
+
 
     document.getElementById("newWord").innerHTML = currentWord.join(" ");
     document.getElementById("guessAmount").innerHTML = "Number of guesses remaining = " + guessesLeft;
@@ -31,19 +33,26 @@ document.onkeydown = function(event) {
     return;
 
     var guess = event.key.toUpperCase();
+    if(lettersGuessed.length == 0){
+        lettersGuessed.push(guess);
+        
+        for(i=0; i<wordLetters.length; i++)
 
-    for (i=0; i<lettersGuessed.length; i++)
+        if(guess == wordLetters[i]){
+            currentWord[i] = guess;
+        }
 
-    if (guess === i)
-
-    return;
-
-    else{
-        lettersGuessed.push;
-        document.getElementById("guessLetter").innerHTML = "Letters you have guessed: " + lettersGuessed;
+        else{
+            guessesLeft--;
+        }     
+    
+        document.getElementById("guessLetter").innerHTML = lettersGuessed;
+        document.getElementById("newWord").innerHTML = currentWord.join(" ");
+        document.getElementById("guessAmount").innerHTML = "Number of guesses remaining = " + guessesLeft;
+            
     }
 
-
-        
-        console.log(guess);
+    console.log(currentWord);
+    console.log(guess);
+    console.log(lettersGuessed);
 }
