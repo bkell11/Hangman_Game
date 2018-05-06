@@ -1,18 +1,17 @@
 var gameWords = [
     { word: "JUGGERNOG", sound: "assets/audio/Juggernog.mp3", picture: "assets/images/Juggernog.jpg" }, { word: "DOUBLETAP", sound: "assets/audio/DoubleTap.mp3", picture: "assets/images/DoubleTap.jpg" }, { word: "SPEEDCOLA", sound: "assets/audio/SpeedCola.mp3", picture: "assets/images/SpeedCola.jpg" },
-    { word: "QUICKREVIVE", sound: "assets/audio/QuickRevive.mp3", picture: "assets/images/QuickRevive.jpg" }, { word: "RICHTOFEN", sound: "", picture: "assets/images/Richtofen.jpg" }, { word: "DEMPSEY", sound: "assets/audio/Dempsey.mp3", picture: "assets/images/Dempsey.png" },
+    { word: "QUICKREVIVE", sound: "assets/audio/QuickRevive.mp3", picture: "assets/images/QuickRevive.jpg" }, { word: "RICHTOFEN", sound: "assets/audio/Richtofen.mp3", picture: "assets/images/Richtofen.jpg" }, { word: "DEMPSEY", sound: "assets/audio/Dempsey.mp3", picture: "assets/images/Dempsey.png" },
     { word: "TAKEO", sound: "assets/audio/Takeo.mp3", picture: "assets/images/Takeo.jpg" }, { word: "NIKOLAI", sound: "assets/audio/Nikolai.mp3", picture: "assets/images/Nikolai.jpg" }, { word: "VULTUREAID", sound: "assets/audio/VultureAid.mp3", picture: "assets/images/VultureAid.jpg" },
     { word: "WUNDERFIZZ", sound: "assets/audio/Wunderfizz.mp3", picture: "assets/images/Wunderfizz.png" }, { word: "GOBBLEGUM", sound: "assets/audio/Gobblegum.mp3", picture: "assets/images/Gobblegum.png" }, { word: "DINGO", sound: "assets/audio/Dingo.mp3", picture: "assets/images/Dingo.png" },
-    { word: "WINDSTAFF", sound: "", picture: "assets/images/WindStaff.png" }, { word: "ORIGINS", sound: "", picture: "assets/images/Origins.png" }, { word: "SAMANTHA", sound: "", picture: "assets/images/Samantha.png" },
-    { word: "MAXIS", sound: "assets/audio/Maxis.mp3", picture: "assets/images/Maxis.png" }, { word: "ASCENSION", sound: "assets/audio/Ascension.mp3", picture: "assets/images/Ascension.jpg" }, { word: "EASTEREGG", sound: "assets/images/EasterEgg.mp3", picture: "assets/images/EasterEgg.jpg" },
-    { word: "DIERISE", sound: "assets/audio/DieRise.mp3", picture: "assets/images/DieRise.jpg" }, { word: "PANZERSOLDAT", sound: "", picture: "assets/images/Panzersoldat.jpg" }];
+    { word: "WINDSTAFF", sound: "assets/audio/WindStaff.mp3", picture: "assets/images/WindStaff.png" }, { word: "ORIGINS", sound: "assets/audio/Origins.mp3", picture: "assets/images/Origins.png" }, { word: "SAMANTHA", sound: "assets/audio/Samantha.mp3", picture: "assets/images/Samantha.png" },
+    { word: "MAXIS", sound: "assets/audio/Maxis.mp3", picture: "assets/images/Maxis.png" }, { word: "ASCENSION", sound: "assets/audio/Ascension.mp3", picture: "assets/images/Ascension.jpg" }, { word: "EASTEREGG", sound: "assets/audio/EasterEgg.mp3", picture: "assets/images/EasterEgg.jpg" },
+    { word: "DIERISE", sound: "assets/audio/DieRise.mp3", picture: "assets/images/DieRise.jpg" }, { word: "PANZERSOLDAT", sound: "assets/audio/Panzersoldat.mp3", picture: "assets/images/Panzersoldat.jpg" }];
 var winCounter = 0;
 var guessesLeft = 12;
 var lettersGuessed = [];
 var wordLetters = [];
 var currentWord = [];
 var currentGameWord;
-
 
 function startGame() {
     currentGameWord = gameWords[Math.floor(Math.random() * gameWords.length)];
@@ -75,17 +74,21 @@ document.onkeydown = function (event) {
 
         var image = document.getElementById("main-image");
         image.src = currentGameWord.picture;
-        document.getElementById("winningWord").innerHTML = currentGameWord.word;
-
+        document.getElementById("Winner").innerHTML = currentGameWord.word
         //Setup another word
         startGame();
     }
 
     else if (guessesLeft == 0) {
-        var loser = [{ word: "Zombies", sound: "", picture: "assets/images/Zombies.jpg" }];
+        var loser = { word: "Zombies", sound: "assets/audio/Zombies.mp3", picture: "assets/images/Zombies.jpg" };
+        var audio = document.getElementById("audioplayer");
+        audio.innerHTML = "<source src=\"" + loser.sound + "\" type=\"audio/mp3\">";
+        audio.load();
+        audio.play();
         var image = document.getElementById("main-image");
         image.src = loser.picture;
-        document.getElementById("winningWord").innerHTML = "You Have Been Eaten!";
+        document.getElementById("Winner").innerHTML = "You Have Been Eaten!";
+
         startGame();
 
     }
